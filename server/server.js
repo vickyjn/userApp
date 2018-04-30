@@ -18,11 +18,23 @@ var newUser=new Users({
   name:req.body.name
 });
 
+app.get('/users', (req, res) => {
+  Users.find().then((users) => {
+    res.send({users});
+  }, (e) => {
+    res.status(400).send(e);
+  })
+});
+
+
+
+
+
 newUser.save().then((doc)=>{
   res.send(doc);
 },(e)=>{
 res.status(400).send(e);
-});
+})
 
 
 })
