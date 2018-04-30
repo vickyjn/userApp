@@ -45,3 +45,6 @@ app.listen(3000,()=>{
 // },(e)=>{
 //   console.log('error in creation');
 // })
+module.exports={
+  app:app
+}
